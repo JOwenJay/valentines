@@ -1,0 +1,84 @@
+body{
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #0b1522;
+}
+
+.heart{
+    height: 70px;
+    width: 70px;
+    background: #f20044;
+    position: relative;
+    transform: rotate(-45deg);
+    box-shadow: -10px 10px 90px  #f20044;
+    animation: heart 0.6s linear infinite;
+    cursor: pointer;
+}
+@keyframes heart{
+    0%{
+        transform: rotate(-45deg) scale(1.05);   
+    }
+
+    80%{
+        transform: rotate(-45deg) scale(1.0);   
+    }
+
+    100%{
+        transform: rotate(-45deg) scale(0.8);   
+    }
+}
+
+.heart::before {
+    content: '';
+    position: absolute;
+    height: 70px;
+    width: 70px;
+    background: #f20044;
+    top: -50%;
+    border-radius: 50px;
+    box-shadow: -10px -10px 90px  #f20044;
+    
+}
+
+.heart::after {
+    content: '';
+    position: absolute;
+    height: 70px;
+    width: 70px;
+    background: #f20044;
+    right: -50%;
+    border-radius: 50px;
+    box-shadow: 10px 10px 90px  #f20044;
+    
+}
+
+/* Estilos para la carta oculta */
+.card-container {
+    height: 80%;
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 40px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    /* Textura de papel */
+    background-image: url('./imagenes/textura2.avif'); /* Reemplaza 'papel-textura.jpg' con la ruta correcta de tu imagen de textura de papel */
+    background-size: cover;
+}
+
+.card {
+    text-align: center;
+    font-family: "Cedarville Cursive", cursive;
+    font-weight: 400;
+    font-style: normal; /* Cambia la fuente según tus preferencias */
+    color: #333; /* Color de texto más oscuro */
+    font-size: 16px;
+    line-height: 1.5;
+}
